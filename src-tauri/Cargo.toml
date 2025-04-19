@@ -1,0 +1,61 @@
+[package]
+name = "advanced_calculator"
+version = "1.0.0"
+description = "高级科学计算器应用"
+authors = ["Advanced Calculator Team"]
+edition = "2021"
+rust-version = "1.70"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "advanced_calculator_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+winapi = { version = "0.3", features = ["winbase", "processthreadsapi", "shellscalingapi", "winuser"] }
+
+[features]
+default = []
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort"        # Strip expensive panic clean-up logic
+codegen-units = 1      # Compile crates one after another for optimization
+lto = true             # Enables link time optimization
+opt-level = "s"        # Optimize for binary size
+strip = true           # Strip debug symbols
+incremental = false    # Disable incremental compilation
+
+[profile.dev]
+debug = 1              # Reduce debug info level
+opt-level = 1          # Light optimizations in development
+
+[package.metadata.bundle]
+appimage = { compress = true }
+deb = { optimize = true }
+dmg = { optimize = true }
+msi = { optimize = true }
+nsis = { optimize = true }
+
+# Enable both 32-bit and 64-bit Windows builds
+[package.metadata.tauri.windows]
+32bit = true
+64bit = true
+
+[package.metadata.tauri.windows.webview]
+install = true
+version = "2.0"
+

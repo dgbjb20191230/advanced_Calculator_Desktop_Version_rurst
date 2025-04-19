@@ -1,0 +1,43 @@
+{
+  "name": "advanced-calculator",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "build:all": "node build.js",
+    "build:win": "node build-win.js",
+    "build:windows": "build-windows.bat",
+    "build:msi-64": "tauri build --target x86_64-pc-windows-msvc",
+    "build:msi-32": "tauri build --target i686-pc-windows-msvc",
+    "build:portable": "tauri build --target x86_64-pc-windows-msvc --bundles zip",
+    "build:appx": "tauri build --target x86_64-pc-windows-msvc --bundles appx",
+    "package:all": "build-windows.bat"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.5.0",
+    "@tauri-apps/plugin-opener": "^2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/node": "^22.14.1",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "terser": "^5.29.2",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.3"
+  },
+  "description": "高级科学计算器应用 - 支持基本计算、科学函数、内存操作和历史记录",
+  "author": "Advanced Calculator Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

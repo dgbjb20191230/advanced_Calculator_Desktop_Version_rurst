@@ -1,0 +1,173 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "高级计算器",
+  "version": "1.0.0",
+  "identifier": "com.advanced-calculator.app",
+  "build": {
+    "beforeDevCommand": "yarn dev",
+    "beforeBuildCommand": "yarn build",
+    "devPath": "http://localhost:3000",
+    "distDir": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "高级计算器",
+        "width": 350,
+        "height": 650,
+        "resizable": false,
+        "decorations": true,
+        "center": true,
+        "transparent": false,
+        "fullscreen": false,
+        "minWidth": 350,
+        "minHeight": 650
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["msi", "nsis"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "",
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      },
+      "wix": {
+        "language": "zh-CN",
+        "template": null
+      }
+    },
+    "resources": [],
+    "copyright": "© 2025 高级计算器应用",
+    "category": "Utility",
+    "shortDescription": "高级科学计算器应用",
+    "longDescription": "强大且易用的科学计算器，支持基本计算、科学函数、内存操作和历史记录"
+  },
+  "package": {
+    "productName": "高级计算器",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "clipboard": {
+        "all": true
+      },
+      "dialog": {
+        "all": true
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "fs": {
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "createDir": true,
+        "exists": true,
+        "scope": ["$APPDATA/*", "$APPDATA/高级计算器/*"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "Utility",
+      "copyright": "© 2025 高级计算器团队",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.calculator.advanced",
+      "longDescription": "高级科学计算器应用 - 支持基本计算、科学函数、内存操作和历史记录",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "高级科学计算器",
+      "targets": ["msi", "nsis", "updater", "zip", "appimage"],
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "downloadBootstrapper"
+        },
+        "wix": {
+          "language": ["zh-CN"],
+          "template": "wix/main.wxs",
+          "bannerPath": "wix/banner.png",
+          "dialogImagePath": "wix/dialog.png"
+        },
+        "nsis": {
+          "displayLanguageSelector": true,
+          "installerIcon": "icons/icon.ico",
+          "uninstallerIcon": "icons/icon.ico",
+          "installMode": "both",
+          "license": "LICENSE.txt",
+          "headerImage": "icons/header.bmp",
+          "sidebarImage": "icons/sidebar.bmp",
+          "languages": ["SimpChinese"]
+        },
+        "appx": {
+          "identityName": "高级计算器",
+          "publisher": "CN=高级计算器团队",
+          "publisherDisplayName": "高级计算器团队",
+          "languages": ["zh-CN"],
+          "capabilities": "internetClient",
+          "installModeSetting": "perUser"
+        }
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": false,
+        "title": "高级计算器",
+        "width": 360,
+        "height": 620,
+        "minWidth": 350,
+        "minHeight": 600,
+        "center": true,
+        "decorations": true,
+        "transparent": false,
+        "alwaysOnTop": false,
+        "theme": "Light"
+      }
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true,
+      "menuOnLeftClick": true
+    }
+  }
+}

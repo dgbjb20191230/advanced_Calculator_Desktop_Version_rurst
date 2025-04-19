@@ -1,0 +1,234 @@
+:root {
+  --bg-color: #f0f5ff;
+  --calculator-bg: #ffffff;
+  --title-color: #333333;
+  --display-bg: #f8f9fc;
+  --display-text: #333333;
+  --memory-btn-bg: #ffebee;
+  --memory-btn-text: #d32f2f;
+  --scientific-btn-bg: #f5f5f5;
+  --scientific-btn-text: #333333;
+  --number-btn-bg: #ffffff;
+  --number-btn-text: #333333;
+  --function-btn-bg: #f5f5f5;
+  --function-btn-text: #333333;
+  --operation-btn-bg: #e3f2fd;
+  --operation-btn-text: #1976d2;
+  --equals-btn-bg: #ffb74d;
+  --equals-btn-text: #ffffff;
+  --clear-btn-bg: #ffcdd2;
+  --clear-btn-text: #d32f2f;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calculator {
+  background-color: var(--calculator-bg);
+  border-radius: 20px;
+  width: 350px;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  color: var(--title-color);
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.display-container {
+  width: 100%;
+  background-color: var(--display-bg);
+  border-radius: var(--border-radius);
+  padding: 12px 15px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+  width: 100%;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: right;
+  color: var(--display-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 40px;
+}
+
+.mode-selector {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mode-selector button {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  background-color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.history-container {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.history-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.history-list {
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.history-item {
+  font-size: 14px;
+  color: #666;
+  padding: 3px 0;
+}
+
+/* 修改按钮布局 */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+}
+
+.memory-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+  margin-bottom: 5px;
+}
+
+.science-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+  margin-bottom: 5px;
+}
+
+.bottom-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.memory-btn {
+  background-color: var(--memory-btn-bg);
+  color: var(--memory-btn-text);
+}
+
+.scientific-btn {
+  background-color: var(--scientific-btn-bg);
+  color: var(--scientific-btn-text);
+}
+
+.number-btn {
+  background-color: var(--number-btn-bg);
+  color: var(--number-btn-text);
+  border: 1px solid #e0e0e0;
+}
+
+.function-btn {
+  background-color: var(--function-btn-bg);
+  color: var(--function-btn-text);
+}
+
+.operation-btn {
+  background-color: var(--operation-btn-bg);
+  color: var(--operation-btn-text);
+}
+
+.equals-btn {
+  background-color: var(--equals-btn-bg);
+  color: var(--equals-btn-text);
+  grid-column: span 2;  /* 占据两列空间 */
+}
+
+.clear-btn {
+  background-color: var(--clear-btn-bg);
+  color: var(--clear-btn-text);
+}
+
+.footer {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 400px) {
+  .calculator {
+    width: 100%;
+    border-radius: 0;
+    padding: 15px;
+  }
+  
+  button {
+    font-size: 14px;
+    padding: 8px 5px;
+  }
+}
