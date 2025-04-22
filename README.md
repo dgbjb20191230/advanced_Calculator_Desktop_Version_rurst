@@ -8,8 +8,8 @@
 
 ### 软件截图：
 
-![](C:/XMWJJ/tarui-vue-vile-20250418/assets/PixPin_2025-04-22_10-35-16.png)
+![](assets/PixPin_2025-04-22_10-35-16.png)
 
-![PixPin_2025-04-22_10-35-39](C:/XMWJJ/tarui-vue-vile-20250418/assets/PixPin_2025-04-22_10-35-39.png)
+![](assets/PixPin_2025-04-22_10-35-39.png)
 
-![PixPin_2025-04-22_10-36-06](C:/XMWJJ/tarui-vue-vile-20250418/assets/PixPin_2025-04-22_10-36-06.png)
+![](assets/PixPin_2025-04-22_10-36-06.png)
