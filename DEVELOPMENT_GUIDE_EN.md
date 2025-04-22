@@ -179,22 +179,30 @@ You can automate the upload of your build packages to GitHub Releases locally us
    ```
    Follow the prompts to authorize your account.
 
-3. **Use the Automation Script**
-   - The project root contains the `upload-release.bat` script.
-   - By default, it uploads all `.exe`, `.zip`, `.msi` files in the `releases` directory, with version set to `v1.0.0` (you can edit the variables at the top of the script).
-   - To run:
-     - Double-click the script, or run in terminal:
-       ```bat
-       upload-release.bat
-       ```
-   - The script will check if gh is installed and authenticated, then create a Release and upload the build files.
+3. **Organize the releases folder**
+   - Place the release files to be published (e.g. `AdvancedCalculator_1.0.0_x64_zh-CN.msi`, `AdvancedCalculator_1.0.0_x64-setup.exe`, `AdvancedCalculator_1.0.0_x64.zip`) in the `releases` folder at the project root, and make sure the filenames are in English.
 
-4. **Notes**
+4. **Upload to GitHub Release**
+   - In the project root terminal, run (replace `v1.0.0` with your version):
+     ```bash
+     gh release create v1.0.0 releases\AdvancedCalculator_1.0.0_x64_zh-CN.msi releases\AdvancedCalculator_1.0.0_x64-setup.exe releases\AdvancedCalculator_1.0.0_x64.zip --title "Advanced Calculator v1.0.0" --notes "Windows installer and setup wizard"
+     ```
+   - If the release already exists, use:
+     ```bash
+     gh release upload v1.0.0 releases\AdvancedCalculator_1.0.0_x64_zh-CN.msi releases\AdvancedCalculator_1.0.0_x64-setup.exe releases\AdvancedCalculator_1.0.0_x64.zip
+     ```
+
+5. **Add a download link in README.md**
+   - In the "Download" section, add:
+     ```markdown
+     > [👉 Download Latest Release](https://github.com/HuQingyepersonalprojectsummary/tarui-vue-vile-20250418/releases/latest)
+     ```
+
+6. **Notes**
    - Do NOT push large binaries directly to the main branch; only upload them to Releases.
-   - The first time you use gh, you need to authenticate.
-   - You can modify the script to support multiple files, different version numbers, etc.
+   - For each new version, just change the version number and filenames as needed.
 
-If you need auto-incrementing version numbers, multi-language notes, or encounter errors, please contact the developer.
+If you need auto-incrementing version numbers, batch uploads, draft releases, or encounter errors, please contact the developer.
 
 ---
 

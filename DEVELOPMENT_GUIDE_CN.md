@@ -179,22 +179,30 @@ yarn build:all
    ```
    按提示完成授权。
 
-3. **使用自动上传脚本**
-   - 项目根目录已提供 `upload-release.bat` 脚本。
-   - 默认上传 `releases` 目录下所有 `.exe`、`.zip`、`.msi` 文件，版本号为 `v1.0.0`，可自行修改脚本顶部变量。
-   - 运行方法：
-     - 双击脚本，或命令行运行：
-       ```bat
-       upload-release.bat
-       ```
-   - 脚本会自动检测 gh 是否安装和登录，然后创建 Release 并上传打包文件。
+3. **整理 releases 文件夹**
+   - 将需要发布的安装包（如 `AdvancedCalculator_1.0.0_x64_zh-CN.msi`、`AdvancedCalculator_1.0.0_x64-setup.exe`、`AdvancedCalculator_1.0.0_x64.zip`）放到项目根目录下的 `releases` 文件夹，并确保文件名为英文。
 
-4. **注意事项**
+4. **上传到 GitHub Release**
+   - 在项目根目录命令行输入（以 v1.0.0 为例，实际版本号请自行调整）：
+     ```bash
+     gh release create v1.0.0 releases\AdvancedCalculator_1.0.0_x64_zh-CN.msi releases\AdvancedCalculator_1.0.0_x64-setup.exe releases\AdvancedCalculator_1.0.0_x64.zip --title "Advanced Calculator v1.0.0" --notes "Windows 安装包与安装向导"
+     ```
+   - 如果已存在该版本 Release，可用：
+     ```bash
+     gh release upload v1.0.0 releases\AdvancedCalculator_1.0.0_x64_zh-CN.msi releases\AdvancedCalculator_1.0.0_x64-setup.exe releases\AdvancedCalculator_1.0.0_x64.zip
+     ```
+
+5. **在 README.md 添加下载链接**
+   - 推荐在“下载 | Download”部分加入：
+     ```markdown
+     > [👉 点击下载最新版本 / Download Latest Release](https://github.com/HuQingyepersonalprojectsummary/tarui-vue-vile-20250418/releases/latest)
+     ```
+
+6. **注意事项**
    - 不要把大二进制包直接 push 到主分支，只上传到 Release。
-   - 第一次用 gh 需登录授权。
-   - 可根据实际需求修改脚本，支持多文件、不同版本号等。
+   - 每次发布新版本只需更换版本号和文件名即可。
 
-如需自动递增版本号、支持多语言说明等高级功能，或遇到报错，请联系开发者。
+如需自动递增版本号、批量上传、Release 自动草稿等高级功能，或遇到报错，请联系开发者。
 
 ---
 
