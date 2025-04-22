@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    advanced_calculator_lib::run()
+  app_lib::run();
 }
