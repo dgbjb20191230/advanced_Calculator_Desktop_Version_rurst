@@ -3,3 +3,13 @@
 ### 这个软件是用react写的界面，文件名是vue其实是之前想用这个写后来没有用。
 
 ### 高级计算器应用！
+
+### 基本算完成开发。如果有不足后续再完善！
+
+### 软件截图：
+
+![](C:/XMWJJ/tarui-vue-vile-20250418/assets/PixPin_2025-04-22_10-35-16.png)
+
+![PixPin_2025-04-22_10-35-39](C:/XMWJJ/tarui-vue-vile-20250418/assets/PixPin_2025-04-22_10-35-39.png)
+
+![PixPin_2025-04-22_10-36-06](C:/XMWJJ/tarui-vue-vile-20250418/assets/PixPin_2025-04-22_10-36-06.png)
