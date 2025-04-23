@@ -1,12 +1,12 @@
 <div align="center">
-  <h1>Advanced Calculator (React + Tauri)</h1>
+  <h1>🚀 Advanced Calculator (React + Tauri)</h1>
   <p>
     <b>Modern, powerful, and easy-to-use scientific calculator desktop app</b><br/>
     <i>基于 React + Tauri 的现代科学计算器桌面应用</i>
   </p>
-  
-  <a href="./DEVELOPMENT_GUIDE_CN.md">开发文档（中文）</a> |
-  <a href="./DEVELOPMENT_GUIDE_EN.md">Development Guide (EN)</a>
+
+  <a href="./DEVELOPMENT_GUIDE_CN.md">📖 开发文档（中文）</a> |
+  <a href="./DEVELOPMENT_GUIDE_EN.md">📖 Development Guide (EN)</a>
   <br/>
 </div>
 
@@ -21,12 +21,12 @@ This project is an advanced scientific calculator desktop application based on R
 ---
 
 ## 🚀 特性 | Features
-- 基础与科学计算（加减乘除、三角函数、开方、幂等）
-- 内存操作与历史记录
-- 角度/弧度切换
-- 响应式极简界面，键盘支持
-- 一键打包，支持 32/64 位安装包和绿色版
-- 全本地运行，数据隐私安全
+- ➕➖✖️➗ 基础与科学计算（加减乘除、三角函数、开方、幂等）
+- 🧠📜 内存操作与历史记录
+- 🔄 角度/弧度切换
+- 🖥️⌨️ 响应式极简界面，键盘支持
+- 📦 一键打包，支持 32/64 位安装包和绿色版
+- 🔒 全本地运行，数据隐私安全
 
 ---
 
@@ -38,9 +38,14 @@ This project is an advanced scientific calculator desktop application based on R
 ---
 
 ## 🖼️ 截图 | Screenshots
+
 <div align="center">
   <img src="assets/PixPin_2025-04-22_10-35-16.png" width="260" style="margin:8px;"/>
+</div>
+<div align="center">
   <img src="assets/PixPin_2025-04-22_10-35-39.png" width="260" style="margin:8px;"/>
+</div>
+<div align="center">
   <img src="assets/PixPin_2025-04-22_10-36-06.png" width="260" style="margin:8px;"/>
 </div>
 
