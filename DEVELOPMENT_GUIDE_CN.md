@@ -14,7 +14,7 @@
 ---
 
 ## 🚀 项目简介
-本项目是一个基于 React + Tauri 的高级科学计算器桌面应用，支持基本和科学计算、内存操作、历史记录等功能。界面现代、响应式，适配 Windows 32/64 位系统，支持绿色版与多种安装包输出。
+本项目是一个基于 React + Tauri 的高级科学计算器桌面应用，支持基本和科学计算、内存操作、历史记录等功能。界面现代、响应式，适配 Windows 32/64 位系统和 Linux 系统，支持绿色版与多种安装包输出。
 
 ---
 
@@ -22,8 +22,8 @@
 ### 1. 基础环境
 - Node.js >= 16.x
 - Yarn >= 1.x
-- Rust（建议使用 rustup 安装，需支持 Windows 32/64 位目标）
-- Windows 7/8/10/11
+- Rust（建议使用 rustup 安装）
+- Windows 7/8/10/11 或 Linux 系统
 
 ### 2. 安装依赖
 ```bash
@@ -127,9 +127,9 @@ yarn build
 ```bash
 yarn tauri build
 ```
-- 生成 Windows 可执行文件和安装包，输出在 `src-tauri/target/`。
+- 生成可执行文件和安装包，输出在 `src-tauri/target/`。
 
-### 3. 一键多平台打包（推荐）
+### 3. Windows 一键多平台打包
 ```bash
 yarn build:all
 ```
@@ -139,7 +139,20 @@ yarn build:all
 ```
 - 自动生成 32/64 位安装包、绿色版(zip)等，输出在 `releases/` 目录。
 
-### 4. 创建绿色便携版
+### 4. Linux 打包
+```bash
+# 安装必要的依赖
+sudo apt update
+sudo apt install libwebkit2gtk-4.1-dev build-essential curl wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev libsoup-3.0-dev libjavascriptcoregtk-4.1-dev
+
+# 构建应用
+yarn build
+yarn tauri build
+```
+- 生成 .deb（Debian/Ubuntu）和 .rpm（Fedora/CentOS）安装包，以及 AppImage 可执行文件。
+- 输出位置：`src-tauri/target/release/bundle/`
+
+### 5. 创建 Windows 绿色便携版
 ```bash
 ./create-portable.bat
 ```
@@ -148,10 +161,17 @@ yarn build:all
 ---
 
 ## ❓ 常见问题与建议
-- 打包前请确保 Rust 工具链已安装并配置好 Windows 32/64 位目标：
+- Windows 打包前请确保 Rust 工具链已安装并配置好 Windows 32/64 位目标：
   ```bash
   rustup target add i686-pc-windows-msvc x86_64-pc-windows-msvc
   ```
+
+- Linux 打包前请确保安装了必要的系统依赖：
+  ```bash
+  sudo apt update
+  sudo apt install libwebkit2gtk-4.1-dev build-essential curl wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev libsoup-3.0-dev libjavascriptcoregtk-4.1-dev
+  ```
+
 - 依赖安装建议使用 yarn，避免 npm 兼容性问题。
 - 打包失败时可尝试删除 `dist/`、`src-tauri/target/`、`releases/` 后重新构建。
 - 如需自定义应用图标、名称等，请修改 `src-tauri/tauri.conf.json`。

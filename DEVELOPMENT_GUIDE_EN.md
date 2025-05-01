@@ -14,7 +14,7 @@
 ---
 
 ## Project Overview
-This project is an advanced scientific calculator desktop application based on React + Tauri. It supports basic and scientific calculations, memory operations, history records, and more. The UI is modern and responsive, supporting Windows 32/64-bit systems, portable versions, and multiple installer formats.
+This project is an advanced scientific calculator desktop application based on React + Tauri. It supports basic and scientific calculations, memory operations, history records, and more. The UI is modern and responsive, supporting Windows 32/64-bit systems, Linux systems, portable versions, and multiple installer formats.
 
 ---
 
@@ -22,8 +22,8 @@ This project is an advanced scientific calculator desktop application based on R
 ### 1. Prerequisites
 - Node.js >= 16.x
 - Yarn >= 1.x
-- Rust (recommended: install via rustup, with Windows 32/64-bit targets enabled)
-- Windows 7/8/10/11
+- Rust (recommended: install via rustup)
+- Windows 7/8/10/11 or Linux system
 
 ### 2. Install Dependencies
 ```bash
@@ -127,9 +127,9 @@ yarn build
 ```bash
 yarn tauri build
 ```
-- Generates Windows executables and installers, output in `src-tauri/target/`.
+- Generates executables and installers, output in `src-tauri/target/`.
 
-### 3. One-click Multi-platform Packaging (Recommended)
+### 3. Windows Multi-platform Packaging
 ```bash
 yarn build:all
 ```
@@ -139,7 +139,20 @@ Or run the batch script:
 ```
 - Automatically generates 32/64-bit installers, portable (zip), output in `releases/`.
 
-### 4. Create Portable Version
+### 4. Linux Packaging
+```bash
+# Install required dependencies
+sudo apt update
+sudo apt install libwebkit2gtk-4.1-dev build-essential curl wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev libsoup-3.0-dev libjavascriptcoregtk-4.1-dev
+
+# Build the application
+yarn build
+yarn tauri build
+```
+- Generates .deb (Debian/Ubuntu) and .rpm (Fedora/CentOS) packages, as well as AppImage executable.
+- Output location: `src-tauri/target/release/bundle/`
+
+### 5. Create Windows Portable Version
 ```bash
 ./create-portable.bat
 ```
@@ -148,10 +161,17 @@ Or run the batch script:
 ---
 
 ## FAQ & Suggestions
-- Before packaging, ensure Rust toolchain is installed and Windows 32/64-bit targets are added:
+- For Windows packaging, ensure Rust toolchain is installed with Windows 32/64-bit targets:
   ```bash
   rustup target add i686-pc-windows-msvc x86_64-pc-windows-msvc
   ```
+
+- For Linux packaging, ensure necessary system dependencies are installed:
+  ```bash
+  sudo apt update
+  sudo apt install libwebkit2gtk-4.1-dev build-essential curl wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev libsoup-3.0-dev libjavascriptcoregtk-4.1-dev
+  ```
+
 - Use yarn for dependency installation to avoid npm compatibility issues.
 - If packaging fails, try removing `dist/`, `src-tauri/target/`, `releases/` and rebuilding.
 - To customize app icon, name, etc., edit `src-tauri/tauri.conf.json`.

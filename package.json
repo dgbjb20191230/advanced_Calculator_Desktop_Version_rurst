@@ -11,6 +11,7 @@
     "build:all": "node build.js",
     "build:win": "node build-win.js",
     "build:windows": "build-windows.bat",
+    "build:linux": "node build-linux.js",
     "build:msi-64": "tauri build --target x86_64-pc-windows-msvc",
     "build:msi-32": "tauri build --target i686-pc-windows-msvc",
     "build:portable": "tauri build --target x86_64-pc-windows-msvc --bundles zip",
