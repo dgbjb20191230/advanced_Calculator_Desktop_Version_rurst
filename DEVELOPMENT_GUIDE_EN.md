@@ -152,7 +152,25 @@ yarn tauri build
 - Generates .deb (Debian/Ubuntu) and .rpm (Fedora/CentOS) packages, as well as AppImage executable.
 - Output location: `src-tauri/target/release/bundle/`
 
-### 5. Create Windows Portable Version
+### 5. Installing Linux Packages
+```bash
+# Install .deb package (Debian/Ubuntu)
+sudo apt install ./src-tauri/target/release/bundle/deb/jsqyyCalculator_1.0.0_amd64.deb
+
+# Or use dpkg to install
+sudo dpkg -i ./src-tauri/target/release/bundle/deb/jsqyyCalculator_1.0.0_amd64.deb
+# If there are dependency issues, run
+sudo apt-get install -f
+
+# Install .rpm package (Fedora/CentOS)
+sudo rpm -i ./src-tauri/target/release/bundle/rpm/jsqyyCalculator-1.0.0-1.x86_64.rpm
+
+# Run AppImage
+chmod +x ./src-tauri/target/release/bundle/appimage/jsqyyCalculator_1.0.0_amd64.AppImage
+./src-tauri/target/release/bundle/appimage/jsqyyCalculator_1.0.0_amd64.AppImage
+```
+
+### 6. Create Windows Portable Version
 ```bash
 ./create-portable.bat
 ```

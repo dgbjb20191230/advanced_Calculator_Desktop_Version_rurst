@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "高级计算器",
+  "productName": "jsqyyCalculator",
   "version": "1.0.0",
   "identifier": "com.calculator.advanced",
   "build": {
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "高级计算器",
+        "title": "jsqyyCalculator",
         "width": 360,
         "height": 650,
         "resizable": false,
@@ -32,7 +32,7 @@
   "bundle": {
     "active": true,
     "targets": "all",
-    "publisher": "高级计算器",
+    "publisher": "jsqyyCalculator",
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
@@ -44,8 +44,8 @@
         "language": "zh-CN"
       }
     },
-    "copyright": "© 2025 高级计算器应用",
-    "shortDescription": "高级科学计算器应用",
-    "longDescription": "强大且易用的科学计算器，支持基本计算、科学函数、内存操作和历史记录"
+    "copyright": "© 2025 jsqyyCalculator App",
+    "shortDescription": "jsqyyCalculator Advanced Scientific Calculator",
+    "longDescription": "jsqyyCalculator - Powerful and easy-to-use scientific calculator with basic calculations, scientific functions, memory operations and history records"
   }
 }

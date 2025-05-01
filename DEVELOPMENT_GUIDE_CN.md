@@ -152,7 +152,25 @@ yarn tauri build
 - 生成 .deb（Debian/Ubuntu）和 .rpm（Fedora/CentOS）安装包，以及 AppImage 可执行文件。
 - 输出位置：`src-tauri/target/release/bundle/`
 
-### 5. 创建 Windows 绿色便携版
+### 5. 安装 Linux 包
+```bash
+# 安装 .deb 包（Debian/Ubuntu）
+sudo apt install ./src-tauri/target/release/bundle/deb/jsqyyCalculator_1.0.0_amd64.deb
+
+# 或者使用 dpkg 安装
+sudo dpkg -i ./src-tauri/target/release/bundle/deb/jsqyyCalculator_1.0.0_amd64.deb
+# 如果有依赖问题，运行
+sudo apt-get install -f
+
+# 安装 .rpm 包（Fedora/CentOS）
+sudo rpm -i ./src-tauri/target/release/bundle/rpm/jsqyyCalculator-1.0.0-1.x86_64.rpm
+
+# 运行 AppImage
+chmod +x ./src-tauri/target/release/bundle/appimage/jsqyyCalculator_1.0.0_amd64.AppImage
+./src-tauri/target/release/bundle/appimage/jsqyyCalculator_1.0.0_amd64.AppImage
+```
+
+### 6. 创建 Windows 绿色便携版
 ```bash
 ./create-portable.bat
 ```
