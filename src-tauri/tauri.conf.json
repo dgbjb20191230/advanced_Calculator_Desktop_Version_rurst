@@ -44,6 +44,28 @@
         "language": "zh-CN"
       }
     },
+    "macOS": {
+      "frameworks": [],
+      "minimumSystemVersion": "11.0",
+      "exceptionDomain": "",
+      "signingIdentity": null,
+      "providerShortName": null,
+      "entitlements": null
+    },
+    "linux": {
+      "desktop": {
+        "Name": "高级计算器",
+        "Comment": "高级科学计算器应用",
+        "Categories": "Utility;Calculator;",
+        "StartupNotify": true
+      },
+      "deb": {
+        "depends": []
+      },
+      "appimage": {
+        "bundleIdentifier": "com.calculator.advanced"
+      }
+    },
     "copyright": "© 2025 高级计算器应用",
     "shortDescription": "高级科学计算器应用",
     "longDescription": "强大且易用的科学计算器，支持基本计算、科学函数、内存操作和历史记录"
