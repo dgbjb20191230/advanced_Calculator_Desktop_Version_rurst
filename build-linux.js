@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+// 获取当前文件的目录路径
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -77,6 +78,8 @@ try {
           fs.chmodSync(targetPath, 0o755);
           console.log(`${colors.green}AppImage 已复制到: ${targetPath}${colors.reset}`);
         });
+    } else {
+      console.log(`${colors.yellow}未找到 AppImage 包${colors.reset}`);
     }
     
     // Copy Debian package
@@ -90,6 +93,8 @@ try {
           fs.copyFileSync(sourcePath, targetPath);
           console.log(`${colors.green}Debian 包已复制到: ${targetPath}${colors.reset}`);
         });
+    } else {
+      console.log(`${colors.yellow}未找到 Debian 包${colors.reset}`);
     }
   }
   

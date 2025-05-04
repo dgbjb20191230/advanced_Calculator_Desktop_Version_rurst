@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "高级计算器",
+  "productName": "jsqyyCalculator",
   "version": "1.0.0",
   "identifier": "com.calculator.advanced",
   "build": {
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "高级计算器",
+        "title": "jsqyyCalculator",
         "width": 360,
         "height": 650,
         "resizable": false,
@@ -32,7 +32,7 @@
   "bundle": {
     "active": true,
     "targets": "all",
-    "publisher": "高级计算器",
+    "publisher": "jsqyyCalculator",
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
